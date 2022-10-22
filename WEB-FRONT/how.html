@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - Tabs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h2 class="how" onclick="location.href='test.html'">Home</h2>
+    <!-- partial:index.partial.html -->
+    <div class="tabs">
+      <div class="tab-header">
+        <div class="active"><i class="fa fa-user"></i> How</div>
+        <div><i class="fa fa-pencil-square-o"></i> word</div>
+        <div><i class="fa fa-code"></i> developer</div>
+      </div>
+      <div class="tab-indicator"></div>
+      <div class="tab-body">
+        <div class="active">
+          <h2>How to use</h2>
+          <ol>
+            <li>지도에서 출발지 선택</li>
+            <li>지도에서 도착지 선택</li>
+            <li>'길찾기' 버튼 클릭 및 지도 확인</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Word</h2>
+          <li>
+            <b>내수침수</b> > 하수도나 배수로 등의 빗물이 강으로 배수되지 못하여
+            침수되는 현상
+          </li>
+          <li>
+            <b>집중호우</b> > 짧은 시간 동안에 좁은 지역에서 많은 양의 비가
+            내리는 현상
+          </li>
+          <li>
+            <b>우수관 역류</b> > 비로 인한 물을 배수하는 관이 역류하는 현상
+          </li>
+        </div>
+        <div>
+          <h2>Developer</h2>
+          <li>
+            <a
+              href="https://github.com/orgs/Kronos-Team-Project/people/applely25"
+              >KRONOS 김규하</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/orgs/Kronos-Team-Project/people/kairos-hk"
+              >KRONOS 김동영</a
+            >
+          </li>
+          <li><a href="https://github.com/junghwan0312">KRONOS 박정환</a></li>
+        </div>
+
+      </div>
+    </div>
+    <!-- partial -->
+    <script>
+      let tabHeader = document.getElementsByClassName("tab-header")[0];
+      let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+      let tabBody = document.getElementsByClassName("tab-body")[0];
+
+      let tabsPane = tabHeader.getElementsByTagName("div");
+
+      for (let i = 0; i < tabsPane.length; i++) {
+        tabsPane[i].addEventListener("click", function () {
+          tabHeader
+            .getElementsByClassName("active")[0]
+            .classList.remove("active");
+          tabsPane[i].classList.add("active");
+          tabBody
+            .getElementsByClassName("active")[0]
+            .classList.remove("active");
+          tabBody.getElementsByTagName("div")[i].classList.add("active");
+
+          tabIndicator.style.left = `calc(calc(100% / 3) * ${i})`;
+        });
+      }
+    </script>
+  </body>
+</html>
