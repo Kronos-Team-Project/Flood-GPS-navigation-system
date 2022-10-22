@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+    <style>
+        .btn{
+            width: 100px;
+            height: 60px;
+            line-height: 40px;
+            background: green;
+            color: navajowhite;
+            text-align: center;
+            cursor: pointer;
+        }
+        .popup_bg{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .popup{
+            position: absolute;
+            top: calc(50% - 250px);
+            left: calc(50% - 150px);
+            width: 300px;
+            height: 500px;
+            background-color: #fff;
+        }
+    </style>
+
+    <script>
+        $(document).ready(() => {
+            $(".btn").click(() => {
+                $(".popup_bg").css({"display" : "block"});
+            })
+            $(".popup_bg").click(()=>{
+                $(".popup_bg").css({"display" : "none"});
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <button class="btn">모달 팝업</button>
+
+    <div class="popup_bg">
+        <div class="popup">
+            <button>
+                hi
+            </button>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.search-container .suggestions-container {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1;
+      background-color: white;
+  }
